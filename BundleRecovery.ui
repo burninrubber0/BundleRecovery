@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bundle Recovery</string>
+  </property>
+  <widget class="QLineEdit" name="lineEditInput">
+   <property name="geometry">
+    <rect>
+     <x>52</x>
+     <y>10</y>
+     <width>301</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select an image to recover bundles from.</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Select input image...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelInput">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>12</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select an image to recover bundles from.</string>
+   </property>
+   <property name="text">
+    <string>Input</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonBrowseInput">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>11</y>
+     <width>25</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select an image to recover bundles from.</string>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditOutput">
+   <property name="geometry">
+    <rect>
+     <x>72</x>
+     <y>192</y>
+     <width>281</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select a folder to output recovered bundles to.</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Select output folder...</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonBrowseOutput">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>193</y>
+     <width>25</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select a folder to output recovered bundles to.</string>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelOutput">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>28</x>
+     <y>193</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select a folder to output recovered bundles to.</string>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="text">
+    <string>Output</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEditLog">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>381</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Log</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonStart">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>270</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelInterval">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>94</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The default search interval in bytes.&lt;br&gt;Default: 2 KiB</string>
+   </property>
+   <property name="text">
+    <string>Search&lt;br&gt;Interval</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelStart">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>42</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The offset to begin searching the image from.</string>
+   </property>
+   <property name="text">
+    <string>Start Offset</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEnd">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>72</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The offset to stop searching the image at.&lt;br&gt;Default: 8 PiB (auto-adjusts to image size)</string>
+   </property>
+   <property name="text">
+    <string>End Offset</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBoxInterval">
+   <property name="geometry">
+    <rect>
+     <x>64</x>
+     <y>100</y>
+     <width>120</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The default search interval in bytes.&lt;br&gt;Default: 2 KiB</string>
+   </property>
+   <property name="prefix">
+    <string/>
+   </property>
+   <property name="decimals">
+    <number>0</number>
+   </property>
+   <property name="minimum">
+    <double>1.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>9007199254740992.000000000000000</double>
+   </property>
+   <property name="value">
+    <double>2048.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBoxStart">
+   <property name="geometry">
+    <rect>
+     <x>64</x>
+     <y>40</y>
+     <width>120</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The offset to begin searching the image from.</string>
+   </property>
+   <property name="prefix">
+    <string/>
+   </property>
+   <property name="decimals">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <double>9007199254740992.000000000000000</double>
+   </property>
+   <property name="value">
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBoxEnd">
+   <property name="geometry">
+    <rect>
+     <x>64</x>
+     <y>70</y>
+     <width>120</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The offset to stop searching the image at.&lt;br&gt;Default: 8 PiB (auto-adjusts to image size)</string>
+   </property>
+   <property name="prefix">
+    <string/>
+   </property>
+   <property name="decimals">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <double>9007199254740992.000000000000000</double>
+   </property>
+   <property name="value">
+    <double>9007199254740992.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBoxLength">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>72</x>
+     <y>148</y>
+     <width>120</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The length in bytes beyond the start of the file to search for fragments.&lt;br&gt;Default: 1 MiB</string>
+   </property>
+   <property name="prefix">
+    <string/>
+   </property>
+   <property name="decimals">
+    <number>0</number>
+   </property>
+   <property name="minimum">
+    <double>1.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>9007199254740992.000000000000000</double>
+   </property>
+   <property name="value">
+    <double>1048576.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelLength">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>28</x>
+     <y>142</y>
+     <width>40</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>The length in bytes beyond the start of the file to search for fragments.&lt;br&gt;Default: 16 MiB</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Search&lt;br&gt;Length&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxPlatform">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>40</y>
+     <width>152</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <item>
+    <property name="text">
+     <string>PlayStation 3/Xbox 360</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PC/PlayStation 4/Switch</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="labelPlatform">
+   <property name="geometry">
+    <rect>
+     <x>188</x>
+     <y>42</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Platform</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelNames">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>18</x>
+     <y>226</y>
+     <width>50</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select the resource names file to rename bundles with.</string>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="text">
+    <string>Resource&lt;br&gt;Names</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditNames">
+   <property name="geometry">
+    <rect>
+     <x>72</x>
+     <y>234</y>
+     <width>281</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select the resource names file to rename bundles with.</string>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Select resource names list...</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="toolButtonBrowseNames">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>235</y>
+     <width>25</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Select the resource names file to rename bundles with.</string>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelVersion">
+   <property name="geometry">
+    <rect>
+     <x>188</x>
+     <y>72</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Version</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBoxVersion">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>70</y>
+     <width>152</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>All</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bndl v3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bndl v4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bndl v5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bnd2 v2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bnd2 v3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>bnd2 v5</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButtonStop">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>270</y>
+     <width>81</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxExtract">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>172</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Extract files</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxRename">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>210</y>
+     <width>120</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Auto rename files</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxDefrag">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>125</y>
+     <width>200</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Attempt to defragment files (slow)</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBoxSearchAll">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>150</y>
+     <width>200</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Search from the specified start to end for the bundle. (extremely slow)&lt;br&gt;If uncertain, leave this unchecked. Only use this to recover specific files.</string>
+   </property>
+   <property name="text">
+    <string>Search all if nothing found</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

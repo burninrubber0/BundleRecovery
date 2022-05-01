@@ -1,0 +1,9 @@
+[submodule "3rdparty/libdeflate"]
+	path = 3rdparty/libdeflate
+	url = https://github.com/bsergean/libdeflate
+[submodule "3rdparty/libbinaryio"]
+	path = 3rdparty/libbinaryio
+	url = https://github.com/burninrubber0/libbinaryio
+[submodule "3rdparty/CRCpp"]
+	path = 3rdparty/CRCpp
+	url = https://github.com/d-bahr/CRCpp
